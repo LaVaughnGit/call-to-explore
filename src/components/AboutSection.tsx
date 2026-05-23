@@ -2,13 +2,12 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Heart, Globe, Star, Users } from "lucide-react";
+import { Quote, Globe, Heart, Star } from "lucide-react";
 
 const stats = [
-  { icon: Globe, value: "50+", label: "Destinations" },
-  { icon: Users, value: "200+", label: "Happy Travelers" },
-  { icon: Star, value: "5★", label: "Average Rating" },
-  { icon: Heart, value: "100%", label: "Personalized" },
+  { icon: Globe, value: "60+", label: "Destinations" },
+  { icon: Heart, value: "100%", label: "Personal Service" },
+  { icon: Star, value: "5★", label: "Client Rated" },
 ];
 
 export default function AboutSection() {
@@ -56,26 +55,41 @@ export default function AboutSection() {
             initial={{ opacity: 0, x: 40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
-            className="space-y-6"
+            className="flex flex-col gap-6"
           >
-            <div className="bg-gradient-to-br from-sky-800 to-teal-700 rounded-3xl p-10 text-white text-center shadow-xl">
-              <Globe size={56} className="mx-auto mb-4 opacity-90" />
-              <p className="font-[family-name:var(--font-playfair)] text-2xl font-semibold italic">
-                &ldquo;The world is a book, and those who do not travel read
-                only one page.&rdquo;
+            {/* Quote card */}
+            <div className="bg-white rounded-3xl p-8 shadow-md border border-sky-100 relative">
+              <Quote className="text-amber-300 mb-4" size={32} />
+              <p className="text-sky-800 text-lg leading-relaxed font-medium italic mb-4">
+                "Travel isn't just about getting somewhere — it's about the
+                memories you make along the way. We make sure every moment
+                counts."
               </p>
-              <p className="mt-4 text-sky-200 text-sm">— Saint Augustine</p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-sky-400 to-teal-500 flex items-center justify-center text-white font-bold text-sm">
+                  CE
+                </div>
+                <div>
+                  <p className="text-sky-950 font-semibold text-sm">Call to Explore</p>
+                  <p className="text-sky-500 text-xs">Your Personal Travel Planner</p>
+                </div>
+              </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            {/* Stats grid */}
+            <div className="grid grid-cols-3 gap-4">
               {stats.map(({ icon: Icon, value, label }) => (
                 <div
                   key={label}
-                  className="bg-white border border-sky-100 rounded-2xl p-5 text-center shadow-sm hover:shadow-md transition-shadow"
+                  className="bg-white rounded-2xl p-5 shadow-sm border border-sky-100 flex flex-col items-center text-center gap-2"
                 >
-                  <Icon className="mx-auto mb-2 text-teal-600" size={22} />
-                  <div className="text-2xl font-bold text-sky-900">{value}</div>
-                  <div className="text-sky-500 text-sm">{label}</div>
+                  <div className="w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center">
+                    <Icon className="text-teal-600" size={20} />
+                  </div>
+                  <span className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-sky-950">
+                    {value}
+                  </span>
+                  <span className="text-sky-500 text-xs font-medium">{label}</span>
                 </div>
               ))}
             </div>

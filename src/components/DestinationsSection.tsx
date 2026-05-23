@@ -4,49 +4,44 @@ import { motion, useInView, type Variants } from "framer-motion";
 import { useRef } from "react";
 import { MapPin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
 
 const destinations = [
   {
-    name: "Santorini",
-    country: "Greece",
-    region: "Europe",
-    gradient: "from-sky-400 to-blue-600",
-    emoji: "🏛️",
+    name: "The Bahamas",
+    country: "Bahamas",
+    region: "Caribbean",
+    image: "/images/countries/bahamas1.jpg",
   },
   {
-    name: "Bali",
-    country: "Indonesia",
-    region: "Asia",
-    gradient: "from-emerald-400 to-teal-600",
-    emoji: "🌺",
+    name: "Costa Rica",
+    country: "Costa Rica",
+    region: "Central America",
+    image: "/images/countries/costarica1.jpg",
   },
   {
-    name: "Maldives",
-    country: "Indian Ocean",
-    region: "Island",
-    gradient: "from-cyan-400 to-sky-500",
-    emoji: "🐠",
+    name: "Hawaii",
+    country: "United States",
+    region: "Pacific",
+    image: "/images/countries/hawaii1.jpg",
   },
   {
-    name: "Machu Picchu",
-    country: "Peru",
-    region: "Americas",
-    gradient: "from-emerald-600 to-green-800",
-    emoji: "🏔️",
+    name: "Playa del Carmen",
+    country: "Mexico",
+    region: "Caribbean",
+    image: "/images/countries/playadelcarmen1.jpg",
   },
   {
-    name: "Safari Kenya",
-    country: "Kenya",
-    region: "Africa",
-    gradient: "from-amber-400 to-orange-600",
-    emoji: "🦁",
+    name: "Punta Cana",
+    country: "Dominican Republic",
+    region: "Caribbean",
+    image: "/images/countries/puntacana1.jpg",
   },
   {
-    name: "Amalfi Coast",
-    country: "Italy",
-    region: "Europe",
-    gradient: "from-teal-400 to-sky-600",
-    emoji: "⛵",
+    name: "Turks & Caicos",
+    country: "Turks & Caicos",
+    region: "Caribbean",
+    image: "/images/countries/turkscacos1.jpg",
   },
 ];
 
@@ -104,10 +99,15 @@ export default function DestinationsSection() {
               className="group cursor-pointer"
             >
               <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-sky-100">
-                <div
-                  className={`h-44 bg-gradient-to-br ${dest.gradient} flex items-center justify-center relative`}
-                >
-                  <span className="text-6xl">{dest.emoji}</span>
+                <div className="h-48 relative">
+                  <Image
+                    src={dest.image}
+                    alt={dest.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                   <div className="absolute top-3 right-3">
                     <Badge
                       variant="secondary"

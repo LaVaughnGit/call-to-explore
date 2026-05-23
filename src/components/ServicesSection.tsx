@@ -2,10 +2,19 @@
 
 import { motion, useInView, type Variants } from "framer-motion";
 import { useRef } from "react";
-import { Map, Package, Users2, MessageCircle, Clock, Shield } from "lucide-react";
+import { Map, Anchor, Users2, MessageCircle, Clock, Shield } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const services = [
+  {
+    icon: Anchor,
+    title: "Cruise Experiences",
+    description:
+      "Set sail on the vacation of a lifetime. We find and book the perfect cruise for you — from Caribbean getaways to Mediterranean voyages — handling every detail from port to port.",
+    color: "from-teal-500 to-teal-700",
+    lightBg: "bg-teal-50",
+    iconColor: "text-teal-600",
+  },
   {
     icon: Map,
     title: "Custom Trip Planning",
@@ -14,15 +23,6 @@ const services = [
     color: "from-sky-500 to-sky-700",
     lightBg: "bg-sky-50",
     iconColor: "text-sky-600",
-  },
-  {
-    icon: Package,
-    title: "Destination Packages",
-    description:
-      "Browse our curated destination packages — pre-planned trips to stunning locations, ready to customize for your perfect getaway.",
-    color: "from-teal-500 to-teal-700",
-    lightBg: "bg-teal-50",
-    iconColor: "text-teal-600",
   },
   {
     icon: Users2,

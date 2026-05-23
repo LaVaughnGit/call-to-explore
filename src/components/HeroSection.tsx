@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { MapPin, ArrowDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
+import WorldMapHero from "./WorldMapHero";
 
 export default function HeroSection() {
   return (
@@ -13,30 +14,7 @@ export default function HeroSection() {
     >
       <div className="absolute inset-0 bg-gradient-to-br from-sky-950 via-sky-800 to-teal-700" />
 
-      <div className="absolute inset-0 opacity-20">
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-sky-300"
-            style={{
-              width: `${80 + i * 60}px`,
-              height: `${80 + i * 60}px`,
-              left: `${10 + i * 15}%`,
-              top: `${20 + (i % 3) * 25}%`,
-            }}
-            animate={{
-              y: [0, -20, 0],
-              opacity: [0.1, 0.25, 0.1],
-            }}
-            transition={{
-              duration: 4 + i,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 0.5,
-            }}
-          />
-        ))}
-      </div>
+      <WorldMapHero />
 
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-sky-50 to-transparent" />
 
