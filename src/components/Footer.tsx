@@ -52,11 +52,11 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:hello@calltoexplore.com"
+                  href="mailto:call2exp@gmail.com"
                   className="flex items-center gap-2 text-sky-400 hover:text-white text-sm transition-colors"
                 >
                   <Mail size={14} />
-                  hello@calltoexplore.com
+                  call2exp@gmail.com
                 </a>
               </li>
               <li>
@@ -82,6 +82,15 @@ export default function Footer() {
             Made with <Heart size={12} className="text-amber-400" /> for
             travelers everywhere
           </p>
+        </div>
+
+        <div className="mt-6 flex justify-center">
+          <a
+            href="mailto:call2exp@gmail.com?subject=Test%20Email%20%E2%80%94%20Call%20to%20Explore&body=This%20is%20a%20test%20email%20to%20confirm%20call2exp%40gmail.com%20is%20working."
+            className="text-xs text-sky-700 hover:text-amber-400 underline underline-offset-2 transition-colors"
+          >
+            Send test email to call2exp@gmail.com
+          </a>
         </div>
       </div>
     </footer>

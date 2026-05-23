@@ -10,7 +10,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 
 const WHATSAPP_NUMBER = "12407500335";
-const EMAIL_ADDRESS = "hello@calltoexplore.com";
+const EMAIL_ADDRESS = "call2exp@gmail.com";
 
 export default function ContactSection() {
   const ref = useRef(null);
